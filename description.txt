@@ -1,0 +1,12 @@
+mot_data
+=========
+182 videos, 91 stereo*, 84,464 frames, 3,796 tracks, 1,469,616 boxes (short and long videos)
+short videos: 1080 x 1920 resolution, 240HZ, 260 frames
+long videos : 1080 x 1920 resolution, 240HZ, 3117 frames (129_1, 161, 183, 231, 261_1, 349, 406_2), 318 frames(129_2, 349_1, 406_1)
+N.B. 
+- long videos: added: 161, 349; use longer vids: 129, 183, 231, 261_1, 406
+- *261_cam_1: longer vid, 261_cam_2: shorter vid
+
+The short videos are labeled by students. The long videos are labeled by:
+Ben: 183_1, 183_2, 231_1, 231_2, 261_1 
+Fatemeh : 261_1, 349_1, 349_2, 406_1, 406_2, 129_1, 129_2, 161_1, 161_2
