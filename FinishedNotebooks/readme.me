@@ -1,1 +1,49 @@
-Hello
+Pipeline for execution 
+
+1) Clean mot files and save as - mot_cleaner.ipynb 
+
+2) Create ground truth videos and save - sample_video_v2.ipynb 
+
+3) Prepare data for yolov8 training and save model- DataPrepYolov8.ipynb - once for training and once for validation
+
+4) Re-order files for yolov8 format
+
+5) Create data.yaml file 
+
+6) Load  model on videos and save - Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+
+7) Re-ID fish and save - Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+
+8) Create videos and save - sample_video_v2.ipynb
+
+9) ID match stereo videos part 1 using Epipolar Geometry create best matches per frame per fish  - IDMatcher-PerFrame.ipynb
+
+10) ID match stereo videos part 2 find best match per fish and save as data frames - IDMatcher-PerFrame.ipynb
+
+11) Convert DataFrames to dictionaries - IDMatcher-PerFrame.ipynb
+
+12) Create 3d coordinates using stereo videos and ID mapping dictionary - StereoMatchingV3.ipynb
+
+13) Analyse results and display patterns - DataAnalysis.ipynb
+
+Pipeline for evaluation 
+
+1) Hand map detection video IDs and compare to stereo matching results.
+
+2) Map detection video IDs to ground truth video IDs and save  -  Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+
+3) Convert to dictionary -  Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+
+4) Check performance using own metrics + recall, f1, precision and write to file  -  Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+
+5) Convert to table and save - Output_table_gen.ipynb
+
+6) Calculate other metrics and save to file - Output_table_gen.ipynb
+
+7) Convert to table and combine with other metrics - Output_table_gen.ipynb
+
+8) Calculate which fish have been ID-ed per video and for which frames they are not tracked and save as JSON - Output_table_gen.ipynb
+
+9) Calculate for how many frames fish are not tracked per video and save as JSON - Output_table_gen.ipynb
+
+10) Calculate average per metric of all videos and save as table - Output_table_gen.ipynb
