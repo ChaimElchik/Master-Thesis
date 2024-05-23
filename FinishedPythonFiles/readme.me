@@ -1,51 +1,51 @@
-The Pipeline.py file contains executable code that takes the user through the pipeline automatically:
+The Pipeline.py file contains executable code that takes the user through the pipeline automatically with some exceptions:
 
-* 1) Clean mot files and save 
+1) Clean mot files and save 
 
-* Create ground truth videos and save - sample_video_v2.ipynb 
+2) Create ground truth videos and save 
 
-Prepare data for yolov8 training and save model- DataPrepYolov8.ipynb - once for training and once for validation
+3) Prepare data for yolov8 training 
 
-Re-order files for yolov8 format
+4) Re-order files for yolov8 format (needs to be done by hand) see yolov8 data.yaml file notation for more information
 
-Create data.yaml file 
+5) Create data.yaml file (needs to be done by hand)
 
-(Load Fatemeh model)
+6) Train model or load pre-existing model
 
-Load  model on videos and save - Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+7) Re-ID fish and save tracks 
 
-Re-ID fish and save - Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+8) Create videos and save 
 
-Create videos and save - sample_video_v2.ipynb
+9) ID match stereo videos using Epipolar Geometery to create best matches per frame per fish
 
-ID match stereo videos part 1 using epipolar create best matches per frame per fish  - IDMatcher-PerFrame.ipynb
+10) ID match stereo videos by finding best match per fish and save as data frames
 
-ID match stereo videos part 2 find best match per fish and save as data frames - IDMatcher-PerFrame.ipynb
+11) Convert DataFrames to dictionaries for each track
 
-Convert dataframes to dictionaries - IDMatcher-PerFrame.ipynb
+12) Create 3d coordinates using stereo videos and id mapping dictionary
 
-Create 3d coordinates using stereo videos and id mapping dictionary - StereoMatchingV3.ipynb
+13) Analyse results and display patterns
 
-Analyse results and display patterns - DataAnalysis.ipynb
+Vizualize.py file is used to analyze the data after the pipeline and save the graphs, tables and results to be used for in-depth analysis
 
-Pipeline for evaluation 
+The Evaluate_Model_Performance.py file contains executable code that takes the user through the pipeline automatically with some exceptions:
 
-Hand map detection video ids and compare to stereo matching results.
+1) Hand map detection video IDs and compare them to stereo matching results.
 
-Map detection video ids to ground truth video ids and save  -  Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+2) Map detection video IDs to ground truth video IDs and save 
 
-Convert to dictionary -  Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+3) Convert to a dictionary 
 
-Check performance using own metrics + recall, f1, precision and write to file  -  Object_Tracking_RE_ID_Matching_to_GT_Performance_Checker.ipynb
+4) Check performance using own metrics + recall, f1, precision and write to file
 
-Convert to table and save - Output_table_gen.ipynb
+5) Convert to table and save 
 
-Calculate other metrics and save to file - Output_table_gen.ipynb
+6) Calculate other metrics and save to file 
 
-Convert to table and combine with other metrics - Output_table_gen.ipynb
+7) Convert to table and combine with other metrics 
 
-Calculate which fish have been ID-ed per video and for which frames they are not tracked and save as json - Output_table_gen.ipynb
+8) Calculate which fish have been ID-ed per video and for which frames they are not tracked and save as JSON 
 
-Calculate for how many frames fish are not tracked per video and save as json - Output_table_gen.ipynb
+9) Calculate for how many frames fish are not tracked per video and save as JSON 
 
-Calculate average per metric of all videos and save as table - Output_table_gen.ipynb
+10) Calculate the average per metric of all videos and save as table 
