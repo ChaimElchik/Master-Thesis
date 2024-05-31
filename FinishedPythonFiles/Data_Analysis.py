@@ -47,6 +47,7 @@ def Fish_Trajectories_Graphs(df):
         # Show the plot
         end_name = str(fish_id) + "Fish_Trajectory_plot.png"
         plt.savefig(end_name)
+        plt.close()
 
 
 def Fish_Speed_Graphs(df):
@@ -60,8 +61,9 @@ def Fish_Speed_Graphs(df):
         plt.ylabel('Speed')
         plt.title(f'Speed Analysis - Fish ID: {fish_id}')
         plt.legend()
-        end_name = str(fish_id) + "plot.png"
+        end_name = str(fish_id) + "Fish_Speed_plot.png"
         plt.savefig(end_name)
+        plt.close()
 
 def Speed_Acceleration_Df(df):
     # Calculate speed per fish per frame
@@ -87,8 +89,9 @@ def Fish_Acceleration_Graphs(df):
         plt.ylabel('Acceleration')
         plt.title(f'Acceleration Analysis - Fish ID: {fish_id}')
         plt.legend()
-        end_name = str(fish_id) + "plot.png"
+        end_name = str(fish_id) + "Fish_Acceleration_plot.png"
         plt.savefig(end_name)
+        plt.close()
 
 
 def T_Test_Acceleration(df):
@@ -113,6 +116,7 @@ def Fish_Path_length_Graph(df):
     plt.title('Path Length Analysis')
     end_name = "Fish_Path_Length_Plot.png"
     plt.savefig(end_name)
+    plt.close()
 
 def AVG_Fish_Path_Length(df):
     # Calculate total path length covered by each fish ID
@@ -158,6 +162,7 @@ def Temporal_Patterns_Of_Movement(df):
     plt.title('Temporal Patterns of Movement')
     end_name = "Temporal_Patterns_Of_Movement_Graph.png"
     plt.savefig(end_name)
+    plt.close()
 
 def Fish_speeds_changes(df):
     # Calculate speed difference compared to the previous frame for each fish
@@ -217,3 +222,4 @@ def Depth_Analysis(df):
     plt.legend()
     end_name = "Depth_Analysis_Graph.png"
     plt.savefig(end_name)
+    plt.close()
