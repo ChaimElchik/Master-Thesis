@@ -45,7 +45,7 @@ def Fish_Trajectories_Graphs(df):
         ax.legend()
 
         # Show the plot
-        end_name = fish_id + "plot.png"
+        end_name = str(fish_id) + "plot.png"
         plt.savefig(end_name)
 
 
@@ -60,7 +60,7 @@ def Fish_Speed_Graphs(df):
         plt.ylabel('Speed')
         plt.title(f'Speed Analysis - Fish ID: {fish_id}')
         plt.legend()
-        end_name = fish_id + "plot.png"
+        end_name = str(fish_id) + "plot.png"
         plt.savefig(end_name)
 
 def Speed_Acceleration_Df(df):
@@ -87,7 +87,7 @@ def Fish_Acceleration_Graphs(df):
         plt.ylabel('Acceleration')
         plt.title(f'Acceleration Analysis - Fish ID: {fish_id}')
         plt.legend()
-        end_name = fish_id + "plot.png"
+        end_name = str(fish_id) + "plot.png"
         plt.savefig(end_name)
 
 
@@ -119,13 +119,14 @@ def AVG_Fish_Path_Length(df):
     path_lengths = df.groupby('fish_id').apply(lambda group: ((group['x'].diff()**2 + group['y'].diff()**2 + group['z'].diff()**2) ** 0.5).sum())
 
     # Compare path lengths between different fish IDs using descriptive statistics
-    mean_path_length = path_lengths.mean()
-    print(mean_path_length)
+    mean_path_length = str(path_lengths.mean())
     with open("AVG_Fish_Path_Length.txt", "w") as f:
         f.write("Average Path Length:\n")
-        f.write(mean_path_length.to_string())  # Write stats to file
+        f.write(mean_path_length)  # Write stats to file
 
 def Heatmap_of_Fish_Density_Graph(df):
+    plt.figure()  # Create a new figure to avoid conflicts
+    plt.clf()  # Clear the current figure
     # Create a 2D histogram (heatmap) of fish density
     plt.hist2d(df['x'], df['y'], bins=50, cmap='hot')
     plt.colorbar(label='Density')
@@ -134,6 +135,8 @@ def Heatmap_of_Fish_Density_Graph(df):
     plt.title('Heatmap of Fish Density')
     end_name = "Heatmap_of_Fish_Density_Graph.png"
     plt.savefig(end_name)
+    plt.close()  # Close the figure to free memory
+
 
 def Temporal_Patterns_Of_Movement(df):
     # Define the total number of frames in the video
@@ -182,10 +185,15 @@ def Fish_speeds_changes(df):
             f.write(f"Fish ID {fish_id}: Frames with speed increase > {threshold} - {group['frame'].tolist()}\n")  # Write stats to file
 
 def Spatial_Distribution(df):
+    plt.figure()  # Create a new figure to avoid conflicts
+    plt.clf()  # Clear the current figure
+    # Create a new 2D axis
+    ax = plt.gca()
     # Visualize spatial distribution of fish within the tank
-    sns.scatterplot(x='x', y='y', data=df, hue='fish_id')
+    sns.scatterplot(x='x', y='y', data=df, hue='fish_id', ax=ax)
     end_name = "Spatial_Distribution_Graph.png"
     plt.savefig(end_name)
+    plt.close()  # Close the figure to free memory
 
 
 def Depth_Analysis(df):
