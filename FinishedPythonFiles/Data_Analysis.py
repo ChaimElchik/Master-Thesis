@@ -45,7 +45,7 @@ def Fish_Trajectories_Graphs(df):
         ax.legend()
 
         # Show the plot
-        end_name = str(fish_id) + "plot.png"
+        end_name = str(fish_id) + "Fish_Trajectory_plot.png"
         plt.savefig(end_name)
 
 
