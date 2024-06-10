@@ -10,6 +10,8 @@ FinishedPythonFiles contains all notebooks converted to executable Python code w
 
 data.yaml file is necessary for running files
 
+The code can be run using either the Python files or notebooks, the python files are the cleaned up and organized versions of the notebooks. Instructions for running the python files can be found in the file themselves and below.
+
 ## Model Deployment and Training Using Python Files
 
 * To Train and Deploy the Model the MOT dataset is required with the MOT files, Video files and Stereo Camera Parameter files in the respective folders mots and vids. The stereo Camera Parameters need to be in the same location as the Python Files. 
