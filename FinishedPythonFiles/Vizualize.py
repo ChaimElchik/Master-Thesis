@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     # plots for a stereo matched video to visualize results
     # requires to load a df_cor_3d
-    df = pd.read_csv('df_to_analyze.csv')
+    df = pd.read_csv('../df_to_analyze.csv')
     Fish_Trajectories_Graphs(df)
     Fish_Speed_Graphs(df)
     Speed_Acceleration_Df(df)
