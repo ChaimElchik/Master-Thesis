@@ -10,4 +10,6 @@ FinishedPythonFiles contains all notebooks converted to executable Python code w
 
 data.yaml file is necessary for running files
 
+Visit the ReadMe in the FinishedPythonFiles for full instructions on running the code.
+
 
