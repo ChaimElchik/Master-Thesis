@@ -2,9 +2,11 @@
 
 This is the working repository for the Master Thesis
 
-FinishedNotebooks contains all notebooks used with explenations 
+Overleaf link: https://www.overleaf.com/read/pkszxhzdwvjd#080ba4
 
-FinishedPythonFiles contains all notebooks converted to executable Python code with explenations 
+FinishedNotebooks contains all notebooks used with explanations 
+
+FinishedPythonFiles contains all notebooks converted to executable Python code with explanations
 
 data.yaml file is necessary for running files
 
