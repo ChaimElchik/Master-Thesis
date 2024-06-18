@@ -79,7 +79,7 @@ def Deploy_Model(video_list,model):
                     y_offset = cy - ymin  # Offset from the top edge
                     x = float(cor[i][0])
                     y = float(cor[i][1])
-                    row_data = {'frame': frame_number, 'id': ids[i].item(), 'x': float(cor[i][0]), 'y': float(cor[i][1]), 'x-offset':x_offset,'y-offset':y_offset}
+                    row_data = {'frame': frame_number, 'id': ids[i].item(), 'x': float(cx), 'y': float(cy), 'x-offset':x_offset,'y-offset':y_offset}
                     rows.append(row_data)
 
     # Create a DataFrame from the list of dictionaries
