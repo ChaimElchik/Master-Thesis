@@ -13,10 +13,10 @@ def clean_file(input_file):
             # Extract relevant information and convert to desired format
             frame = parts[0]
             ID = parts[1]
-            x = float(parts[2])
-            y = float(parts[3])
-            x_offset = float(parts[4])
-            y_offset = float(parts[5])
+            x = float(parts[2]) + (float(parts[4]) / 2)
+            y = float(parts[3]) + (float(parts[5]) / 2)
+            x_offset = float(parts[4]) / 2
+            y_offset = float(parts[5]) / 2
 
             # Write the cleaned data to the output file
             outfile.write(f"{frame},{ID},{x},{y},{x_offset},{y_offset}\n")
